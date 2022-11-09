@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <random>
 
 
 template<typename T>
@@ -7,7 +8,7 @@ std::vector<T> quickSorted(const std::vector<T>& arr) {
     if (arr.size() < 2) {
         return arr;
     }
-    const T pivot = arr.front(); // Выбираем опорный элемент
+    const T pivot = arr[std::rand() % arr.size()]; // Выбираем опорный элемент
     std::vector<T> left;
     std::vector<T> right;
     for (const T element : arr) {
@@ -29,7 +30,7 @@ void quickSort(std::vector<T>& arr) {
     if (arr.size() < 2) {
         return;
     }
-    const T pivot = arr.front(); // Выбираем опорный элемент
+    const T pivot = arr[std::rand() % arr.size()]; // Выбираем опорный элемент
     std::vector<T> left;
     std::vector<T> right;
     for (const T element : arr) {
